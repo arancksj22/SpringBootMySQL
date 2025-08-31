@@ -13,7 +13,7 @@ public class MainController {
         this.mainService = mainService;
     }
 
-    @GetMapping("/api")
+    @GetMapping("/api/library")
     public String Get(){
         return mainService.greet();
     }
