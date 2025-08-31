@@ -22,4 +22,12 @@ public class MainService {
     public Book createBook(Book book){
         return repo.save(book);
     }
+
+    public void deleteBook(int id){
+        repo.deleteById(id);
+    }
+
+    public Book getBookById(int id){
+        repo.findById(id);
+    }
 }

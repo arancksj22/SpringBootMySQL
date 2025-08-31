@@ -21,8 +21,19 @@ public class MainController {
         return mainService.getAllBooks();
     }
 
+    @GetMapping("/{id}")
+    public Book getBookById(@PathVariable int id){
+        return mainService.getBookById(id);
+    }
+
     @PostMapping
     public Book createBook(@RequestBody Book book){
         return mainService.createBook(book);
     }
+
+    @DeleteMapping("/{id}")
+    public void deleteBook(@PathVariable int id){
+        mainService.deleteBook(id);
+    }
+
 }
