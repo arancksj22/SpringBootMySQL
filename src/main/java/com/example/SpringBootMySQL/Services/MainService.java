@@ -28,6 +28,7 @@ public class MainService {
     }
 
     public Book getBookById(int id){
-        repo.findById(id);
+        return repo.findById(id)
+                    .orElseThrow(() -> new RuntimeException("Book not found"));
     }
 }
