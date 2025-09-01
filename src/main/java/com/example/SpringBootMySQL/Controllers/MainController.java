@@ -16,6 +16,10 @@ public class MainController {
         this.mainService = mainService;
     }
 
+    public String backEndEntered(){
+        return "This is the backend, Welcome";
+    }
+
     @GetMapping
     public List<Book> getAllBooks(){
         return mainService.getAllBooks();
@@ -35,5 +39,4 @@ public class MainController {
     public void deleteBook(@PathVariable int id){
         mainService.deleteBook(id);
     }
-
 }
