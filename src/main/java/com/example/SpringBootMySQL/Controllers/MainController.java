@@ -35,6 +35,12 @@ public class MainController {
         return mainService.createBook(book);
     }
 
+    @PutMapping("/{id}")
+    public Book updateBook(@PathVariable int id, @RequestBody Book book) {
+        return mainService.updateBook(id, book);
+    }
+
+
     @DeleteMapping("/{id}")
     public void deleteBook(@PathVariable int id){
         mainService.deleteBook(id);

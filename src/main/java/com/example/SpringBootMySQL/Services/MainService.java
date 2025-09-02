@@ -27,6 +27,19 @@ public class MainService {
         repo.deleteById(id);
     }
 
+    public Book updateBook(int id, Book updatedBook){
+        Book existing = repo.findById(id)
+                            .orElseThrow(() -> new RuntimeException("Book not found"));
+
+        existing.setId(updatedBook.getId());
+        existing.setISBN(updatedBook.getISBN());
+        existing.setName(updatedBook.getName());
+        existing.setAuthorName(updatedBook.getAuthorName());
+        existing.setYearPublished(updatedBook.getYearPublished());
+
+        return repo.save(existing);
+    }
+
     public Book getBookById(int id){
         return repo.findById(id)
                     .orElseThrow(() -> new RuntimeException("Book not found"));
